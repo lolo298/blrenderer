@@ -1,11 +1,12 @@
-FROM node:16
+FROM node:16-alpine3.11
 RUN mkdir -p /app
 WORKDIR /app
-COPY package.json ./
-COPY package-lock.json ./
+COPY app/package.json .
+COPY app/package-lock.json .
 RUN npm install
-COPY . .
+COPY app/ .
 EXPOSE 3000
+EXPOSE 8080
 CMD ["npm", "start"]
 # CMD ["sleep", "infinity"]
 

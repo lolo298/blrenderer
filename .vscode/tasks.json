@@ -1,31 +1,19 @@
 {
   "version": "2.0.0",
   "tasks": [
-	{
-		"label": "Build and run docker",
-		"type": "shell",
-		"command": "docker build -t ${input:appName} . ; docker run -dp ${input:port}:${input:port} ${input:appName}",
-		"presentation": {
-			"reveal": "always",
-			"panel": "new"
-		},
-		"problemMatcher": [],
-		"group": {
-			"kind": "build",
-			"isDefault": true
-		}
-	}
-],
-  "inputs": [
     {
-      "id": "appName",
-      "type": "promptString",
-	  "description": "Enter the name of the app:"
-    },
-    {
-      "id": "port",
-      "type": "promptString",
-	  "description": "Enter the port number:"
+      "label": "Build and run docker",
+      "type": "shell",
+      "command": "docker build -t blrenderer . ; docker run -dp 3000:3000 blrenderer",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
     }
   ]
 }

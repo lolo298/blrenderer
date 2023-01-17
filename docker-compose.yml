@@ -1,0 +1,18 @@
+version: "3"
+services:
+  blrenderer:
+    environment:
+      - NODE_ENV=development
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./app:/app
+    container_name: blrenderer
+    expose:
+      - "3000"
+      - "8080"
+    ports:
+      - "3000:3000"
+      - "8080:8080"
+    command: npm start
