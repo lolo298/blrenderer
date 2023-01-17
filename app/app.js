@@ -38,7 +38,7 @@ wss.on("connection", function connection(ws) {
       const ssh = new NodeSSH();
       ssh
         .connect({
-          host: "192.168.1.16",
+          host: process.env.SSH_HOST,
           username: process.env.SSH_USER,
           password: process.env.SSH_PASS,
         })
@@ -86,7 +86,7 @@ function removeTempFiles(filename) {
   const ssh = new NodeSSH();
   ssh
     .connect({
-      host: "192.168.1.16",
+      host: process.env.SSH_HOST,
       username: process.env.SSH_USER,
       password: process.env.SSH_PASS,
     })

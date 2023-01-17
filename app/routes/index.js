@@ -12,7 +12,7 @@ router.get("/", function (req, res, next) {
 });
 // get computer state
 router.get("/computer/", function (req, res, next) {
-  exec("ping -c 1 192.168.1.16", (error, stdout, stderr) => {
+  exec("ping -c 1 " + process.env.SSH_HOST, (error, stdout, stderr) => {
     if (error) {
       res.status(500);
       state = false;
@@ -32,7 +32,7 @@ router.post("/blend", upload.single("file"), function (req, res, next) {
   const ssh = new NodeSSH();
   ssh
     .connect({
-      host: "192.168.1.16",
+      host: process.env.SSH_HOST,
       username: process.env.SSH_USER,
       password: process.env.SSH_PASS,
     })
