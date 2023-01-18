@@ -8,7 +8,7 @@ const { NodeSSH } = require("node-ssh");
 require("dotenv").config();
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Express" });
+  res.render("index", { title: "Blender renderer" });
 });
 // get computer state
 router.get("/computer/", function (req, res, next) {

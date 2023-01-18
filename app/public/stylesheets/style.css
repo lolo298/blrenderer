@@ -1,8 +1,122 @@
+:root {
+  /* blender 3d software colors */
+  --blender-blue: #275787;
+  --blender-orange: #ea7600;
+
+}
 body {
+  margin: 0;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  nav {
+    position: relative;
+    width: 100vw;
+    z-index: 1;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin: 0;
+    top: -50%;
+    position: absolute;
+    /* center title inside nav*/
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--blender-orange);
+  }
+  
+  nav p {
+    float: right;
+    margin-right: 10%;
 }
 
 a {
-  color: #00B7FF;
+  color: var(--blender-orange);
+  }
+  
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  input[type="file"] {
+    display: none;
+  }
+  
+  input[type="submit"] {
+    font-size: 2rem;
+    font-family: Helvetica, sans-serif;
+    width: 20vw;
+    height: 10vh;
+    margin-top: 20px;
+    border: 2px solid var(--blender-orange);
+    color: var(--blender-orange);
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  #fileSelect {
+    display: flex;
+    font-size: 5em;
+    font-family: Helvetica, sans-serif;
+    width: 60vw;
+    height: 60vh;
+    border: 2px solid var(--blender-orange);
+    color: var(--blender-orange);
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  #modalImg {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  
+  }
+  
+  #modalContent {
+    width: 80%;
+    height: 80%;
+    border-radius: 10px;
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #rendered {
+    width: 80%;
+    border-radius: 10px;
+  }
+  
+  #close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 2%;
+    font-size: 2rem;
+    color: var(--blender-orange);
+    cursor: pointer;
 }

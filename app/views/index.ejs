@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <p>State of computer : <span id="computer"></span></p>
+    <div id="modalImg">
+      <div id="modalContent">
+        <span id="close" onclick="this.parentNode.parentNode.style.display='none'" >&times;</span>
+        <img id="rendered" />
+      </div>
+    </div>
+    <nav>
+      <h1><%= title %></h1>
+      <p>State of computer : <svg width="10" height="10" version="1.1"
+         xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink">
+        <circle id="computerState" cx="5" cy="5" r="5" style="fill:rgb(0, 190, 0)"/>
+      </svg>
+      <span id="computer"></span></p>
+    </nav>
     <form action="" method="">
-      <input type="file" name="blend" id="blend">
-      <input type="submit" value="Upload">
+      <input type="file" name="blend" id="blend" />
+      <label for="blend" id="fileSelect">Select the file</label>
+      <input type="submit" value="Upload" />
     </form>
-    <img id="rendered"></img>
     <script src="./javascripts/index.js"></script>
   </body>
 </html>
